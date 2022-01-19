@@ -1,9 +1,9 @@
-function App() {
+import RoutDefinition from './router'
+
+export default function App() {
   return (
     <div className="App">
-      <h1>React Test</h1>
+      <RoutDefinition/>
     </div>
   );
 }
-
-export default App;
