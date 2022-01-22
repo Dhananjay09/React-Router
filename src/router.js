@@ -1,5 +1,5 @@
 import { Route, BrowserRouter as Router, Routes } from 'react-router-dom'  
-import Component1 from './Components/Component1';
+import {Component1} from './Components/Component1';
 import Component2 from './Components/Component2';
 import Component3 from './Components/Component3';
 import Header from './header';

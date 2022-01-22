@@ -1,9 +1,11 @@
 
+import { createContext, useContext } from "react";
+import { Customer } from "./Component1";
+
 const Component2 = (props) => {
-    return (
-        <>
-        <h1>Component 2 {props.value}</h1>
-        </>
-    )
+    const value = useContext(Customer);
+    return <>
+    {value}
+    </>
 }
 export default Component2;
