@@ -5,7 +5,7 @@ import Component3 from './Components/Component3';
 import Header from './header';
 import history from './utils/history';
 
-const RoutDefinition = () => {
+const RoutDefinition = (props) => {
     return (
         <Router history={history}>
         <div>
