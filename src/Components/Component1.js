@@ -1,18 +1,13 @@
 import {useState, useEffect} from 'react';
 const Component1 = () => {
-    const [height, setHeight] = useState(window.innerHeight);
-    const [width, setWidth] = useState(window.innerWidth);
-
-
+    const [height, setHeight] = useState(0);
     useEffect (()=> {
-        window.addEventListener('resize', ()=>{
-            setHeight(window.innerHeight)
-            setWidth(window.innerWidth)
-        })    
-    }, [])
+    document.title = `${height}`
+    },[])
     return (
         <>
-        <h1>Hello {height + " "+width}</h1>
+        <input onChange={(event)=> setHeight(event.target.value)} placeholder="Enter the input"></input>
+        <h1>Hello {height }</h1>
         </>
 
     )
