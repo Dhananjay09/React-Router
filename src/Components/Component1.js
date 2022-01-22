@@ -1,33 +1,26 @@
-import {useState, useRef, useReducer} from 'react';
-import useMouseMove from './useMouseMove';
-const updateState = (state, action) => {
-    switch(action){
-        case "INC":
-            state = {count : state.count + 1}
-            break
-        case "DEC":
-            state = { count : state.count - 1}
-            break
-        case "RST":
-            state = {count : 0}
-            break
-        default:
-            throw new Error("Error Fount in Switch")
+import React, {useState, useRef, useReducer} from 'react';
+
+const Fetch = (props) => {
+    return <>
+    {
+    React.Children.map(props.children, (child , index) =>{
+        if (index===0)
+            return
+        return child;
+    })
     }
-return state;
+
+    <h1>{React.Children.count(props.children)}</h1>
+    </>
 }
+
 const Component1 = () => {
     // const [state, dispatch] = useReducer(updateState , {count : 0});
-    const [x,y] = useMouseMove();
     return (
-        <>
-        {x, y}
-        {/* <h1> {state.count}</h1>
-        <button onClick={() => dispatch("INC")}>INCREMENT</button>
-        <button onClick={() => dispatch("DEC")}>DECREMENT</button>
-        <button onClick={() => dispatch("RST")}>RESET</button> */}
-        {}
-        </>
+        <Fetch>
+           <h1>Dhananjay Singh</h1>
+           <p>Ajay Singh</p>
+        </Fetch>
     )
 }
 
