@@ -1,5 +1,5 @@
 import {useState, useRef, useReducer} from 'react';
-
+import useMouseMove from './useMouseMove';
 const updateState = (state, action) => {
     switch(action){
         case "INC":
@@ -17,13 +17,16 @@ const updateState = (state, action) => {
 return state;
 }
 const Component1 = () => {
-    const [state, dispatch] = useReducer(updateState , {count : 0});
+    // const [state, dispatch] = useReducer(updateState , {count : 0});
+    const [x,y] = useMouseMove();
     return (
         <>
-        <h1> {state.count}</h1>
+        {x, y}
+        {/* <h1> {state.count}</h1>
         <button onClick={() => dispatch("INC")}>INCREMENT</button>
         <button onClick={() => dispatch("DEC")}>DECREMENT</button>
-        <button onClick={() => dispatch("RST")}>RESET</button>
+        <button onClick={() => dispatch("RST")}>RESET</button> */}
+        {}
         </>
     )
 }
